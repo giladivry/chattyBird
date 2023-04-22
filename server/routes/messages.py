@@ -1,7 +1,6 @@
-from fastapi import APIRouter, HTTPException
-from typing import List
+from fastapi import APIRouter
 
-from server.database.models import MessageOut, MessageIn, RecipientMessages
+from server.models.message import MessageOut, MessageIn, RecipientMessages
 from server.database import db_manager
 
 messages = APIRouter()
@@ -15,13 +14,11 @@ async def send_message(payload: MessageIn):
         'id': message_id,
         **payload.dict()
     }
-
     return response
 
 
-@messages.get('/{recipient}/', response_model=RecipientMessages)
-async def get_message(recipient):
-    messages = await db_manager.get_recipient_messages(recipient)
+@messages.get('/', response_model=RecipientMessages)
+async def get_messages():
+    messages = await db_manager.get_recipient_messages()
     res = {"messages": messages}
-
     return res

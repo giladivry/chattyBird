@@ -1,4 +1,4 @@
-from server.database.models import MessageIn, MessageOut
+from server.models.message import MessageIn
 from server.database.db import messages, database
 
 
@@ -13,6 +13,6 @@ async def get_message(id):
     return await database.fetch_one(query=query)
 
 
-async def get_recipient_messages(recipient_id):
-    query = messages.select(messages.c.recipient == recipient_id)
+async def get_recipient_messages():
+    query = messages.select()
     return await database.fetch_all(query=query)

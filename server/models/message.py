@@ -3,8 +3,6 @@ from typing import List
 
 
 class MessageIn(BaseModel):
-    sender: str
-    recipient: str
     message: str
 
 

@@ -16,8 +16,6 @@ messages = Table(
     'messages',
     metadata,
     Column('id', Integer, primary_key=True),
-    Column('recipient', String(50)),
-    Column('sender', String(50)),
     Column('message', String(10000)),
 )
 
