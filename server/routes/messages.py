@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from server.llms.vanilla.openai_chat import chat
-from server.models.message import MessageOut, MessageIn, RecipientMessages
+from server.models.message import MessageOut, MessageIn, ConversationMessages
 from server.database import dal
 
 messages = APIRouter()
@@ -18,7 +18,7 @@ async def send_message(payload: MessageIn):
     return response
 
 
-@messages.get('/', response_model=RecipientMessages)
+@messages.get('/', response_model=ConversationMessages)
 async def get_messages():
     messages = await db_manager.get_recipient_messages()
     res = {"messages": messages}

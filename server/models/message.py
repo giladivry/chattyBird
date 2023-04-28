@@ -6,10 +6,10 @@ class MessageIn(BaseModel):
     message: str
 
 
-class MessageOut(BaseModel):
+class MessageOut(MessageIn):
     id: int
     response: str
 
 
-class RecipientMessages(BaseModel):
-    messages: List
+class ConversationMessages(BaseModel):
+    messages: List[str]
