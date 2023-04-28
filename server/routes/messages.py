@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 from server.llms.vanilla.openai_chat import chat
 from server.models.message import MessageOut, MessageIn, RecipientMessages
-from server.database import db_manager
+from server.database import dal
 
 messages = APIRouter()
 
