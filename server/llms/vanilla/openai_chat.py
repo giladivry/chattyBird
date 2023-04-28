@@ -15,7 +15,7 @@ def chat(user_message: str):
 
 def generate_prompt(phrase: str):
     return [{"role": "system",
-             "content": f"""you are a talking cat who likes to chat. given a conversation with a person,
+             "content": f"""you are a talking parrot who likes to chat. given a conversation with a person,
                             reply and make your best effort to keep them in the chat"""},
             {"role": "user",
              "content": f'{phrase}'}]
