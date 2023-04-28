@@ -12,11 +12,10 @@ An example service using fastapi and chatgpt
   $ sudo docker run -p 8000:8000 chattybird
 
 
- - send a message
+ - send a message 
 
-  $ curl --header "Content-Type: application/json"  --request POST --data '{"sender":"1234","recipient":"1", "message":"Hello"}'  http://localhost:8000/api/messages/
-
-
- - receive all recipient messages
-
-  $ curl --header "Content-Type: application/json"  http://localhost:8000/api/messages/1/
+$ curl --header "Content-Type: application/json"  --request POST   --data '{"message":"hi!"}'  http://localhost:8000/api/messages/
+{"message":"hi!","id":2,"response":"Hello there! How are you doing today?"}
+ 
+ - receive all conversation messages
+  $ TODO
