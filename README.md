@@ -1,16 +1,15 @@
-A messaging microservice sample 
-
+An example service using fastapi and chatgpt
 
 ## build and run
 
  - build the image
 
-  $ sudo docker build -t sample_ms .
+  $ sudo docker build -t chattybird .
 
 
  - run the container
 
-  $ sudo docker run -p 8000:8000 sample_ms
+  $ sudo docker run -p 8000:8000 chattybird
 
 
  - send a message
