@@ -15,6 +15,7 @@ An example service using fastapi and chatgpt
  - send a message 
 
 $ curl --header "Content-Type: application/json"  --request POST   --data '{"message":"hi!"}'  http://localhost:8000/api/messages/
+
 {"message":"hi!","id":2,"response":"Hello there! How are you doing today?"}
  
  - receive all conversation messages
