@@ -6,8 +6,9 @@ class MessageIn(BaseModel):
     message: str
 
 
-class MessageOut(MessageIn):
+class MessageOut(BaseModel):
     id: int
+    response: str
 
 
 class RecipientMessages(BaseModel):
