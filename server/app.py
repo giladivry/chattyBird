@@ -10,6 +10,7 @@ metadata.create_all(engine)
 
 class Settings(BaseSettings):
     OPENAI_API_KEY: str = 'OPENAI_API_KEY'
+    PINECONE_API_KEY: str = 'PINECONE_API_KEY'
 
     class Config:
         env_file = '.env'
